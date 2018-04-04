@@ -87,11 +87,12 @@ def parse_json(json_str):
         if item not in lines:
             f.write(item)
             qq_msg += item
-    # 去掉最后一行的换行符
-    qq_msg = qq_msg.strip('\n')
-    print('您有新消息:')
-    print(qq_msg)
-    q.put(qq_msg)
+    if len(qq_msg) != 0:
+        # 去掉最后一行的换行符
+        qq_msg = qq_msg.strip('\n')
+        print('您有新消息:')
+        print(qq_msg)
+        q.put(qq_msg)
     print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + ' Done !')
     f.flush()
     f.close()
