@@ -5,6 +5,7 @@ from urllib import request
 import json
 from qqbot import _bot as bot
 import time
+# from apscheduler.schedulers.blocking import BlockingScheduler
 
 # 丰登街没有关注达人的选项，错过消息了怎么办？
 # 目标是定期轮询新消息，祝大家涨涨涨~
@@ -116,22 +117,33 @@ def thread_run():
 def manager_run():
     # 轮询：每隔一分钟
     while True:
+        # 等待QQ ...
         time.sleep(1)
         t = threading.Thread(target=thread_run)
         t.setDaemon(True)
         t.start()
-        time.sleep(60)
+        time.sleep(59)
     pass
 
 
 if __name__ == '__main__':
     QQ_TARGET = input('请输入发送消息给谁(QQ号):\n')
+    # 扫描二维码登录
     bot.Login(['-q', '1234'])
     # thread_run()
+    # sched = BlockingScheduler()
+    # sched.add_job(thread_run, 'interval', seconds=10)
+    # sched.start()
+
     t = threading.Thread(target=manager_run)
     t.setDaemon(True)
     t.start()
+
     # 随时准备给qq好友发送消息
     while True:
+        # CPU执行时纳秒级的
+        # 线程sleep 1秒 再执行循环体代码，能显著降低CPU负载97% -> 0.1%
+        # sleep时，线程不消耗CPU资源
+        time.sleep(1)
         if not q.empty():
             send_msg_by_qq(q.get())
