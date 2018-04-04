@@ -9,7 +9,7 @@ import time
 # 丰登街没有关注达人的选项，错过消息了怎么办？
 # 目标是定期轮询新消息，祝大家涨涨涨~
 # 需要python 3 支持
-# 需要QQbot支持：<href='https://github.com/pandolia/qqbot'/>
+# 需要QQbot支持：<a href='https://github.com/pandolia/qqbot'/>
 
 # 要关注的对象
 authors = ['一路向阳',]
