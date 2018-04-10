@@ -14,6 +14,6 @@ def command():
 
 if __name__ == '__main__':
     while True:
-        command()
         # 据观察mac的提示持续时间在5秒左右
-        time.sleep(10)
+        time.sleep(DURING)
+        command()
