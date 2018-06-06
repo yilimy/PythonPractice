@@ -9,7 +9,7 @@ DURING = 60 * 45
 
 def command():
     cmd = 'display notification \"' + \
-          "It is time to have a rest ." + '\" with title \"Dear Master\"'
+          "It is time to have a rest ." + '\" with title \"Dear Master\" sound name \"Glass\"'
     call(["osascript", "-e", cmd])
 
 if __name__ == '__main__':
