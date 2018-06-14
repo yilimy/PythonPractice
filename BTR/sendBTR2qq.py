@@ -7,7 +7,6 @@ import queryBTR
 import queue
 
 # 给谁发消息
-# QQ_TARGET_BTR = 'Myl'
 QQ_TARGET_BTR = '流浪的云'
 
 
