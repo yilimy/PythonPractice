@@ -13,7 +13,7 @@ QQ_TARGET_BTR = '流浪的云'
 # 通过QQ发送消息
 def send_msg_by_qq(msg):
     if msg:
-        print('发送消息给 %s ' % QQ_TARGET_BTR)
+        print('发送消息给 %s ' % QQ_TARGET_BTR) 
         bl = bot.List('buddy', QQ_TARGET_BTR)
         if bl:
             b = bl[0]
