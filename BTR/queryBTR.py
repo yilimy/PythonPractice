@@ -66,7 +66,8 @@ def parse_rice(data):
     # print("最新情报 --> %s %s" % (cnys[0], cnys[1]))
     # notify_mac("%s\n ===> %s" % (cnys[0], cnys[1]))
     # notify_win(str(cnys[0]), str(cnys[1]))
-    return "%s\n ===> %s" % (cnys[0], cnys[1])
+    # return "%s\n ===> %s" % (cnys[0], cnys[1])
+    return "%s ===> %s, %s" % ("BTR", cnys[1], cnys[3])
     pass
 
 
@@ -76,7 +77,8 @@ def notify_mac():
     cmd = 'display notification \"' + msg + '\" with title \"Dear Master\"'
     call(["osascript", "-e", cmd])
     pass
-    
+
+
 def notify_win(title, msg):
     # 通过这种方式，可能会导致右下角多个小窗口
     # 可以把class转进来
